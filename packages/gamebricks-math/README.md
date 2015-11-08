@@ -1,0 +1,2 @@
+# gamebricks-math
+Math component
