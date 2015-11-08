@@ -1,6 +1,6 @@
 import Vector2 from 'gamebricks-types-vector2';
 
-describe('gamebox/types/vector', function () {
+describe('Vector2', function () {
 
   it('is a function', function () {
     expect(Vector2).to.be.a('function');
