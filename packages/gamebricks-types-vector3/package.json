@@ -14,7 +14,9 @@
   },
   "keywords": [
     "game",
-    "math",
+    "types",
+    "vector",
+    "vector3",
     "gamebricks"
   ],
   "author": "Johannes Stein",
