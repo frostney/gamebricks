@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gamebricks/gamebricks-math.git"
+    "url": "git+https://github.com/gamebricks/gamebricks-types-vector3.git"
   },
   "keywords": [
     "game",
@@ -20,9 +20,9 @@
   "author": "Johannes Stein",
   "license": "(Unlicense OR MIT)",
   "bugs": {
-    "url": "https://github.com/gamebricks/gamebricks-math/issues"
+    "url": "https://github.com/gamebricks/gamebricks-types-vector3/issues"
   },
-  "homepage": "https://github.com/gamebricks/gamebricks-math#readme",
+  "homepage": "https://github.com/gamebricks/gamebricks-types-vector3#readme",
   "devDependencies": {
     "babel-cli": "^6.1.2",
     "babel-eslint": "^4.1.4",
