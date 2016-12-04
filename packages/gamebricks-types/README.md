@@ -1,2 +1,2 @@
 # gamebricks-types
-Types for gamebricks
+Container module for all `gamebricks` module
