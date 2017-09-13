@@ -20,7 +20,7 @@ clamp.array = function clampArray([value, min, max]) {
   return clamp(value, min, max);
 };
 
-clamp.obj = function clampObject({value, min, max}) {
+clamp.obj = function clampObject({ value, min, max }) {
   return clamp(value, min, max);
 };
 

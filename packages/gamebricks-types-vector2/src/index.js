@@ -40,8 +40,8 @@ class Vector2 {
     return JSON.stringify(this.toJSON());
   }
 
-  static fromJSON(obj) {
-    return new Vector2(obj.x, obj.y);
+  static fromJSON({ x, y }) {
+    return new Vector2(x, y);
   }
 
   static fromString(str) {

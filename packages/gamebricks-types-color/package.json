@@ -1,5 +1,5 @@
 {
-  "name": "gamebricks-types-vector2",
+  "name": "gamebricks-types-color",
   "version": "1.0.0",
   "description": "Vector2 type",
   "main": "lib/index.js",

@@ -41,8 +41,8 @@ class Vector3 {
     return JSON.stringify(this.toJSON());
   }
 
-  static fromJSON(obj) {
-    return new Vector3(obj.x, obj.y, obj.z);
+  static fromJSON({ x, y, z }) {
+    return new Vector3(x, y, z);
   }
 
   static fromString(str) {
