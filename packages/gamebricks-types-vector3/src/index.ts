@@ -1,27 +1,21 @@
-const sqrMagnitude = function sqrMagnitude(v) {
+const sqrMagnitude = (v: Vector3): number => {
   return Vector3.dot(v, v);
 };
 
 class Vector3 {
-  constructor(x = 0, y = 0, z = 0) {
-    this.set(x, y, z);
+  constructor(public x: number = 0, public y: number = 0, public z: number = 0) {
+
   }
 
-  set(x = 0, y = 0, z = 0) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
-  }
-
-  get magnitude() {
+  get magnitude(): number {
     return Math.sqrt(sqrMagnitude(this));
   }
 
-  get sqrMagnitude() {
+  get sqrMagnitude(): number {
     return sqrMagnitude(this);
   }
 
-  static dot(vec1, vec2) {
+  static dot(vec1: Vector3, vec2: Vector3): number {
     return vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z;
   }
 
@@ -29,7 +23,7 @@ class Vector3 {
     return new Vector3(vec1.y * vec2.z - vec2.y * vec1.z, vec1.z * vec2.x - vec2.z * vec1.x, vec1.x * vec2.y - vec2.x * vec1.y);
   }
 
-  clone() {
+  clone(): Vector3 {
     return new Vector3(this.x, this.y, this.z);
   }
 
@@ -45,11 +39,11 @@ class Vector3 {
     return new Vector3(x, y, z);
   }
 
-  static fromString(str) {
+  static fromString(str: string) {
     return Vector3.fromJSON(JSON.parse(str));
   }
 
-  add(vector) {
+  add(vector: Vector3) {
     this.x += vector.x;
     this.y += vector.y;
     this.z += vector.z;
@@ -57,7 +51,7 @@ class Vector3 {
     return this;
   }
 
-  subtract(vector) {
+  subtract(vector: Vector3) {
     this.x -= vector.x;
     this.y -= vector.y;
     this.z -= vector.z;
@@ -65,7 +59,7 @@ class Vector3 {
     return this;
   }
 
-  multiply(vector) {
+  multiply(vector: Vector3) {
     this.x *= vector.x;
     this.y *= vector.y;
     this.z *= vector.z;
@@ -73,7 +67,7 @@ class Vector3 {
     return this;
   }
 
-  divide(vector) {
+  divide(vector: Vector3) {
     this.x /= vector.x;
     this.y /= vector.y;
     this.z /= vector.z;
@@ -89,11 +83,11 @@ class Vector3 {
     return this;
   }
 
-  equals(v) {
+  equals(v: Vector3) {
     return (this.x === v.x && this.y === v.y && this.z === v.z);
   }
 
-  static forward() {
+  static forward(): Vector3 {
     return new Vector3(0, 0, 1);
   }
 
