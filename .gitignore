@@ -1,2 +1,4 @@
+dist
+.rts2_*
 node_modules
 lerna-debug.log
