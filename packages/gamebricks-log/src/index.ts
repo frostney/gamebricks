@@ -1,4 +1,11 @@
-const Log = {};
+interface ILog {
+  connector?: any
+  plugins?: any
+  logLevelMap?: any
+  logLevel?: string
+}
+
+const Log: ILog = {};
 
 Log.connector = null;
 
