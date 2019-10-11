@@ -2,6 +2,11 @@ import {EventEmitter} from 'events';
 import {performance} from 'animframe';
 
 class Timer extends EventEmitter {
+  startTime: number
+  active: boolean
+  paused: boolean
+  tick: (currentTime: number) => void
+
   constructor(public interval = 1000) {
     super();
 
@@ -12,7 +17,7 @@ class Timer extends EventEmitter {
 
     var oldTicks = 0;
 
-    this.tick = (currentTime) => {
+    this.tick = (currentTime: number) => {
       if (!this.active || this.paused) {
         return;
       }
