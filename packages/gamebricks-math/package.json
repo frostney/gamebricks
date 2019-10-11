@@ -2,7 +2,9 @@
   "name": "@gamebricks/math",
   "version": "1.0.0",
   "description": "Math and stuff for games",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/math.esm.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom"
