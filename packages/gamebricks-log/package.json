@@ -1,8 +1,10 @@
 {
-  "name": "gamebricks-log",
+  "name": "@gamebricks/log",
   "version": "1.0.1",
   "description": "Log module",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/log.esm.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom"

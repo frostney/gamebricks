@@ -2,7 +2,9 @@
   "name": "@gamebricks/rect",
   "version": "1.0.0",
   "description": "Rect type",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/rect.esm.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom"
