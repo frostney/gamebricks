@@ -1,0 +1,19 @@
+{
+  "name": "@gamebricks/keys",
+  "version": "1.0.0",
+  "description": "Math and stuff for games",
+  "main": "dist/index.js",
+  "module": "dist/keys.esm.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsdx build",
+    "test": "tsdx test --env=jsdom"
+  },
+  "keywords": [
+    "game",
+    "timer",
+    "gamebricks"
+  ],
+  "author": "Johannes Stein",
+  "license": "(Unlicense OR MIT)"
+}
