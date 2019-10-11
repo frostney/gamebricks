@@ -1,0 +1,23 @@
+{
+  "name": "@gamebricks/loop",
+  "version": "1.0.0",
+  "description": "Math and stuff for games",
+  "main": "dist/index.js",
+  "module": "dist/loop.esm.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsdx build",
+    "test": "tsdx test --env=jsdom"
+  },
+  "keywords": [
+    "game",
+    "math",
+    "gamebricks"
+  ],
+  "author": "Johannes Stein",
+  "license": "(Unlicense OR MIT)",
+  "dependencies": {
+    "animframe": "^2.0.0",
+    "@gamebricks/timer": "1.0.0"
+  }
+}
