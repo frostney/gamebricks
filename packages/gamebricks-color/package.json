@@ -2,7 +2,9 @@
   "name": "@gamebricks/color",
   "version": "1.0.0",
   "description": "Vector2 type",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/color.esm.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom"
