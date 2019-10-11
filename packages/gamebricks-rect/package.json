@@ -4,9 +4,8 @@
   "description": "Rect type",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel ./src -d lib",
-    "lint": "eslint .",
-    "test": "npm run lint"
+    "build": "tsdx build",
+    "test": "tsdx test --env=jsdom"
   },
   "repository": {
     "type": "git",
@@ -24,16 +23,7 @@
     "url": "https://github.com/gamebricks/gamebricks-types-rect/issues"
   },
   "homepage": "https://github.com/gamebricks/gamebricks-types-rect#readme",
-  "devDependencies": {
-    "babel-cli": "^6.1.2",
-    "babel-eslint": "^4.1.4",
-    "babel-preset-es2015": "^6.1.2",
-    "babel-preset-stage-1": "^6.1.2",
-    "eslint": "^1.9.0",
-    "eslint-config-airbnb": "^0.1.0",
-    "eslint-plugin-react": "^3.8.0"
-  },
   "dependencies": {
-    "gamebricks-types-vector2": "^1.0.0"
+    "@gamebricks/vector": "^1.0.0"
   }
 }
