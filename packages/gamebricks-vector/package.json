@@ -12,14 +12,5 @@
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom"
   },
-  "author": "Johannes Stein",
-  "devDependencies": {
-    "babel-cli": "^6.1.2",
-    "babel-eslint": "^4.1.4",
-    "babel-preset-es2015": "^6.1.2",
-    "babel-preset-stage-1": "^6.1.2",
-    "eslint": "^1.9.0",
-    "eslint-config-airbnb": "^0.1.0",
-    "eslint-plugin-react": "^3.8.0"
-  }
+  "author": "Johannes Stein"
 }

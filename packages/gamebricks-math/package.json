@@ -7,21 +7,11 @@
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gamebricks/gamebricks-math.git"
-  },
   "keywords": [
     "game",
     "math",
     "gamebricks"
   ],
   "author": "Johannes Stein",
-  "license": "(Unlicense OR MIT)",
-  "bugs": {
-    "url": "https://github.com/gamebricks/gamebricks-math/issues"
-  },
-  "homepage": "https://github.com/gamebricks/gamebricks-math#readme",
-  "devDependencies": {
-  }
+  "license": "(Unlicense OR MIT)"
 }

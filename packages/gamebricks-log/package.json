@@ -7,10 +7,6 @@
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gamebricks/gamebricks-log.git"
-  },
   "keywords": [
     "game",
     "log",
@@ -18,11 +14,5 @@
     "gamebricks"
   ],
   "author": "Johannes Stein",
-  "license": "(Unlicense OR MIT)",
-  "bugs": {
-    "url": "https://github.com/gamebricks/gamebricks-log/issues"
-  },
-  "homepage": "https://github.com/gamebricks/gamebricks-log#readme",
-  "devDependencies": {
-  }
+  "license": "(Unlicense OR MIT)"
 }

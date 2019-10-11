@@ -7,10 +7,6 @@
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gamebricks/gamebricks-types-rect.git"
-  },
   "keywords": [
     "game",
     "types",
@@ -19,10 +15,6 @@
   ],
   "author": "Johannes Stein",
   "license": "(Unlicense OR MIT)",
-  "bugs": {
-    "url": "https://github.com/gamebricks/gamebricks-types-rect/issues"
-  },
-  "homepage": "https://github.com/gamebricks/gamebricks-types-rect#readme",
   "dependencies": {
     "@gamebricks/vector": "^1.0.0"
   }
