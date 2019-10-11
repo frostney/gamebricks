@@ -1,8 +1,18 @@
 import { EventEmitter } from 'events';
-import BezierEasing from 'bezier-easing';
-import Loop from './loop';
+import bezier from 'bezier-easing';
+import Loop from '@gamebricks/loop';
+
+const css = {
+  ease: bezier(0.25, 0.1, 0.25, 1.0),
+  linear: bezier(0.00, 0.0, 1.00, 1.0),
+  'ease-in': bezier(0.42, 0.0, 1.00, 1.0),
+  'ease-out': bezier(0.00, 0.0, 0.58, 1.0),
+  'ease-in-out': bezier(0.42, 0.0, 0.58, 1.0)
+}
 
 class Tween extends EventEmitter {
+  target: any
+
   constructor() {
     super();
 
@@ -10,14 +20,12 @@ class Tween extends EventEmitter {
   }
 
   animate(property, end, time, easing) {
-    var self = this;
-
     if (this.target && typeof this.target[property] === 'number') {
       var start = this.target[property];
 
       if (start === end) {
-        this.trigger('start');
-        this.trigger('end');
+        this.emit('start');
+        this.emit('end');
         return;
       }
 
@@ -27,28 +35,28 @@ class Tween extends EventEmitter {
 
       timer.interval = time;
 
-      timer.on('start', function () {
-        self.trigger('start');
+      timer.on('start', () => {
+        this.emit('start');
       });
 
       timer.start();
 
-      timer.on('tick', function (ticks) {
-        var multiplicator = BezierEasing.css[easing](ticks / (timer.startTime + timer.interval));
+      timer.on('tick', (ticks) => {
+        var multiplicator = css[easing](ticks / (timer.startTime + timer.interval));
         var points = (end - start) * multiplicator;
 
         if (points > end) {
           points = end;
         }
 
-        self.target[property] = points;
-        self.trigger('animate', points);
+        this.target[property] = points;
+        this.emit('animate', points);
       });
 
-      timer.on('interval', function () {
+      timer.on('interval', () => {
         timer.stop();
-        self.target[property] = end;
-        self.trigger('end');
+        this.target[property] = end;
+        this.emit('end');
       });
 
     }
