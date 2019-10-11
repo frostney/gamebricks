@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "outDir": "dist",
     "rootDir": ".",
+    "esModuleInterop": true,
     "paths": {
       "~/*": ["packages/*"]
     }
