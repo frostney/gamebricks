@@ -1,112 +1,68 @@
-import {requestAnimationFrame, performance} from 'animframe';
-import { EventEmitter } from 'events';
-import Timer from '@gamebricks/timer';
+import { requestAnimationFrame, performance } from 'animframe';
 
-var loopEvents = new EventEmitter();
-var pausedEvents = {};
-var timers = [];
+let loopEvents = {};
+let pausedEvents = {};
+const timers = [];
 
-/**
- * @class Loop
- * @static
- */
-var Loop = (function () {
+let isRunning = true;
 
-  var isRunning = true;
+export const run = () => {
+  let time: number;
 
-  /**
-   * @method run
-   */
-  var run = function () {
-    var time;
+  (function loop() {
+    requestAnimationFrame.call(window, loop);
 
-    (function loop() {
-      requestAnimationFrame.call(window, loop);
+    const now = performance.now();
+    const dt = now - (time || now);
 
-      var now = performance.now();
-      var dt = now - (time || now);
+    time = now;
 
-      time = now;
-
-      if (!isRunning) {
-        return;
-      }
-
-      timers.forEach(function (timer) {
-        timer.tick(now);
-      });
-
-      var eventKeys = Object.keys(loopEvents.events.listeners);
-
-      for (var i = 0, j = eventKeys.length; i < j; i++) {
-        (function (key) {
-          if (!pausedEvents[key]) {
-            loopEvents.trigger(key, dt);
-          }
-        })(eventKeys[i]);
-      }
-    })();
-  };
-
-  /**
-   * @method stop
-   */
-  var stop = function () {
-    isRunning = false;
-  };
-
-  var clear = function () {
-    loopEvents.clear();
-    pausedEvents = {};
-  };
-
-  var on = function (taskName, taskFunction) {
-    loopEvents.on(taskName, taskFunction);
-    pausedEvents[taskName] = false;
-  };
-
-  var off = function (taskName) {
-    loopEvents.off(taskName);
-    if (pausedEvents[taskName] != null) {
-      delete pausedEvents[taskName];
-    }
-  };
-
-  var pause = function (taskName: string) {
-    pausedEvents[taskName] = true;
-  };
-
-  var resume = function (taskName) {
-    if (taskName == null) {
-      isRunning = true;
+    if (!isRunning) {
       return;
     }
 
-    pausedEvents[taskName] = false;
-  };
+    timers.forEach((timer) => {
+      timer.tick(now);
+    });
 
-  var createTimer = function (interval) {
-    var timer = new Timer(interval);
-    timers.push(timer);
+    Object.keys(loopEvents).forEach((eventName) => {
+      if (!pausedEvents[eventName]) {
+        loopEvents[eventName](dt);
+      }
+    });
+  }());
+};
 
-    return timer;
-  };
+export const stop = () => {
+  isRunning = false;
+};
 
+export const clear = () => {
+  loopEvents = {};
+  pausedEvents = {};
+};
 
-  return {
-    run: run,
+export const on = (taskName: string, taskFunction: () => void) => {
+  loopEvents[taskName] = taskFunction;
+  pausedEvents[taskName] = false;
+};
 
-    stop: stop,
-    clear: clear,
+export const off = (taskName: string) => {
+  delete loopEvents[taskName];
+  if (pausedEvents[taskName] != null) {
+    delete pausedEvents[taskName];
+  }
+};
 
-    on: on,
-    off: off,
+export const pause = (taskName: string) => {
+  pausedEvents[taskName] = true;
+};
 
-    pause: pause,
-    resume: resume,
+export const resume = (taskName: string) => {
+  if (taskName == null) {
+    isRunning = true;
+    return;
+  }
 
-    createTimer: createTimer
-  };
-})();
-
-export default Loop;
+  pausedEvents[taskName] = false;
+};
