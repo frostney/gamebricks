@@ -17,7 +17,7 @@
   "author": "Johannes Stein",
   "license": "(Unlicense OR MIT)",
   "dependencies": {
-    "bezier-easing": "2.1.0",
-    "@gamebricks/loop": "1.0.0"
+    "@gamebricks/loop": "1.0.0",
+    "bezier-easing": "2.1.0"
   }
 }
