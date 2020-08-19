@@ -7,7 +7,7 @@ class Timer extends EventEmitter {
   paused: boolean
   tick: (currentTime: number) => void
 
-  constructor(public interval = 1000) {
+  constructor(public interval: number = 1000) {
     super();
 
     this.startTime = -1;
