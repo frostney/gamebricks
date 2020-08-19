@@ -2164,7 +2164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-eslint@npm:^10.0.3, babel-eslint@npm:^10.1.0":
+"babel-eslint@npm:^10.0.3":
   version: 10.1.0
   resolution: "babel-eslint@npm:10.1.0"
   dependencies:
@@ -3338,18 +3338,6 @@ __metadata:
   peerDependencies:
     eslint: ">=5.0.0"
   checksum: e75d4d852129ba301e23cbcac4b5cf1b51478c888bdef769a366730f7f00560229008a5e69c7e603003ece9e3647aebf575150657d5315eb02b34558e05ffd4a
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-flowtype@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "eslint-plugin-flowtype@npm:5.2.0"
-  dependencies:
-    lodash: ^4.17.15
-    string-natural-compare: ^3.0.1
-  peerDependencies:
-    eslint: ^7.1.0
-  checksum: bf70a9bb38b60deb93b1ab14e2516709de912ea02d05ea531e8e1b3e5d56fa58ba893720081e36bffe498055de49868e7052a09468759592ed35ba253e0e40da
   languageName: node
   linkType: hard
 
@@ -7478,9 +7466,7 @@ resolve@1.15.1:
     "@types/jest": ^26.0.10
     "@typescript-eslint/eslint-plugin": ^3.9.1
     "@typescript-eslint/parser": ^3.9.1
-    babel-eslint: ^10.1.0
     eslint: ^7.7.0
-    eslint-plugin-flowtype: ^5.2.0
     tsdx: ^0.13.2
     typescript: ^3.9.7
   languageName: unknown
@@ -7917,13 +7903,6 @@ resolve@1.15.1:
     astral-regex: ^1.0.0
     strip-ansi: ^5.2.0
   checksum: 10b2df41a57675f3d9dde96788261a4a37612c57929455b3c5fbbc2d7e6823432ba303321636f62a1f183cc8632db49dc81bd60e167ed21cd709570533a591ce
-  languageName: node
-  linkType: hard
-
-"string-natural-compare@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "string-natural-compare@npm:3.0.1"
-  checksum: c81b8adc4b91692e01eeb609d85c8fceeba14a41997e65fdc2e01fa9b0a9566663f6326a40436282eaa477ee6997c9096139a995c8220ffca79547c57e1a84e6
   languageName: node
   linkType: hard
 
