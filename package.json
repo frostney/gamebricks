@@ -11,7 +11,7 @@
     "typescript": "^3.6.4"
   },
   "scripts": {
-    "build": "yarn workspaces foreach run build",
+    "build": "yarn workspaces foreach -pt run build",
     "lint": "tsdx lint",
     "test": "tsdx test --env=jsdom"
   },
