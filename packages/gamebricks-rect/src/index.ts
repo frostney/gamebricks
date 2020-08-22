@@ -17,7 +17,7 @@ class Rect {
     return JSON.stringify(this.toJSON());
   }
 
-  static fromString(str: string) {
+  static fromString(str: string): Rect {
     const {x, y, w, h} = JSON.parse(str);
 
     return new Rect(x, y, w, h);
@@ -27,7 +27,7 @@ class Rect {
     return new Vector2(this.x + (this.w / 2), this.y + (this.h / 2));
   }
 
-  contains(vector: Vector2) {
+  contains(vector: Vector2): boolean {
     return (vector.x >= this.x) && (vector.y >= this.y) && (vector.x < this.x + this.w) && (vector.y < this.y + this.h);
   }
 }

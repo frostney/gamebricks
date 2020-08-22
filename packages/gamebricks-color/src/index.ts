@@ -5,7 +5,7 @@ class Color {
 
   }
 
-  lighten(factor) {
+  lighten(factor: number) {
     factor = clamp(factor, 0, 1);
 
     this.r = clamp(this.r + (factor * 255) | 0, 0, 255);
@@ -13,7 +13,7 @@ class Color {
     this.b = clamp(this.b + (factor * 255) | 0, 0, 255);
   }
 
-  darken(factor) {
+  darken(factor: number) {
     factor = clamp(factor, 0, 1);
 
     this.r = clamp(this.r - (factor * 255) | 0, 0, 255);
@@ -21,7 +21,7 @@ class Color {
     this.b = clamp(this.b - (factor * 255) | 0, 0, 255);
   }
 
-  fadeIn(factor) {
+  fadeIn(factor: number) {
     factor = clamp(factor, 0, 1);
 
     this.a = this.a + this.a * factor;
@@ -30,7 +30,7 @@ class Color {
     }
   }
 
-  fadeOut(factor) {
+  fadeOut(factor: number) {
     factor = clamp(factor, 0, 1);
 
     this.a = this.a - this.a * factor;
@@ -51,16 +51,16 @@ class Color {
     }
   }
 
-  toString() {
+  toString(): string {
     return this.toJSON();
   }
 
-  toHex() {
+  toHex(): string {
     return `#${this.r.toString(16)}${this.g.toString(16)}${this.b.toString(16)}`;
   }
 
   // Getting a random color for debugging is quite useful sometimes
-  static random() {
+  static random(): Color {
     var col = [0, 0, 0];
 
     col = col.map(function() {
