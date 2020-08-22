@@ -17,7 +17,7 @@ class Vector3 {
     return vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z;
   }
 
-  static cross(vec1, vec2) {
+  static cross(vec1: Vector3, vec2: Vector3): Vector3 {
     return new Vector3(vec1.y * vec2.z - vec2.y * vec1.z, vec1.z * vec2.x - vec2.z * vec1.x, vec1.x * vec2.y - vec2.x * vec1.y);
   }
 
@@ -29,15 +29,15 @@ class Vector3 {
     return this.clone();
   }
 
-  toString() {
+  toString(): string {
     return JSON.stringify(this.toJSON());
   }
 
-  static fromJSON({ x, y, z }) {
+  static fromJSON({ x, y, z }): Vector3 {
     return new Vector3(x, y, z);
   }
 
-  static fromString(str: string) {
+  static fromString(str: string): Vector3 {
     return Vector3.fromJSON(JSON.parse(str));
   }
 
@@ -81,7 +81,7 @@ class Vector3 {
     return this;
   }
 
-  equals(v: Vector3) {
+  equals(v: Vector3): boolean {
     return (this.x === v.x && this.y === v.y && this.z === v.z);
   }
 

@@ -1,6 +1,6 @@
 import lerp from './lerp';
 
-const inverseLerp = function inverseLerp(min, max, amt) {
+const inverseLerp = function inverseLerp(min: number, max: number, amt: number): number {
   return max - lerp(min, max, amt);
 };
 
