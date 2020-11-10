@@ -5,6 +5,7 @@
     "rootDir": ".",
     "esModuleInterop": true,
     "target": "ES2020",
+    "moduleResolution": "node",
     "paths": {
       "~/*": ["packages/*"]
     }
